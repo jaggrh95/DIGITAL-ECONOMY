@@ -1,8 +1,11 @@
 package com.example.myapplication;
 
 import android.Manifest;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
+import android.os.IBinder;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -26,6 +29,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     public GoogleMap mMap;
     double Longitude;
     double Lattitude;
+    LatLng coordin;
+    boolean mBounded;
+    BlueServer myServer;
 
     Intent intent1;
     private static final int REQUEST_LOCATION = 1;
@@ -43,7 +49,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         String holderlong = intent.getStringExtra(ActivityVoorMapV2.EXTRA_MESSAGE);
         String holderlat = intent.getStringExtra(ActivityVoorMapV2.EXTRA_MESSAGE1);
         Log.i("inmaps",""+holderlat + " en " + holderlong);
-        intent1 = new Intent(this,MainActivity.class);
+        intent1 = new Intent(this,RatingActivity.class);
         Longitude =  Double.parseDouble(holderlong);
         Lattitude =  Double.parseDouble(holderlat);
 
@@ -76,7 +82,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(final Marker marker) {
-                intent1.putExtra(MARKER_MESSAGE,marker.getPosition());
+                coordin = marker.getPosition();
+                onStart();
                 startActivity(intent1);
                 return false;
             }
@@ -101,6 +108,41 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         // (the camera animates to the user's current position).
         return false;
     }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Intent mIntent = new Intent(this, BlueServer.class);
+        bindService(mIntent, mConnection, BIND_AUTO_CREATE);
+    };
+
+    ServiceConnection mConnection = new ServiceConnection() {
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            mBounded = false;
+            myServer = null;
+        }
+
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            mBounded = true;
+            BlueServer.LocalBinder mLocalBinder = (BlueServer.LocalBinder)service;
+            myServer = mLocalBinder.getServerInstance();
+            myServer.Coordin = coordin ;
+
+        }
+    };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mBounded) {
+            unbindService(mConnection);
+            mBounded = false;
+        }
+    };
 }
 
 
