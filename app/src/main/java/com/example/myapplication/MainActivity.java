@@ -12,8 +12,7 @@ import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    boolean mBounded;
-    BlueServer myServer;
+
     private CountDownTimer countDownTimer;
 
     @Override
@@ -24,41 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
 
-        Intent mIntent = new Intent(this, BlueServer.class);
-        bindService(mIntent, mConnection, BIND_AUTO_CREATE);
-    };
-
-    ServiceConnection mConnection = new ServiceConnection() {
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            Toast.makeText(getApplicationContext(), "disconected", Toast.LENGTH_LONG).show();
-            mBounded = false;
-            myServer = null;
-        }
-
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            Toast.makeText(getApplicationContext(), "connection with service", Toast.LENGTH_LONG).show();
-            mBounded = true;
-            BlueServer.LocalBinder mLocalBinder = (BlueServer.LocalBinder)service;
-            myServer = mLocalBinder.getServerInstance();
-            
-
-        }
-    };
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if(mBounded) {
-            unbindService(mConnection);
-            mBounded = false;
-        }
-    };
 
 
 
@@ -71,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Intent intentje = new Intent(context,ActivityVoorMapV2.class);
+                Intent intentje = new Intent(context,NameScreen.class);
                 startActivity(intentje);
             }
         }.start();
