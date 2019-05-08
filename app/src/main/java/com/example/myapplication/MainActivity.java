@@ -9,13 +9,11 @@ import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     boolean mBounded;
     BlueServer myServer;
-    Button knopke;
     private CountDownTimer countDownTimer;
 
     @Override
@@ -62,10 +60,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    public void onclick(View view) {
 
-
-    }
 
     public void startTimer(final Context context){
         countDownTimer = new CountDownTimer(3000,100) {
