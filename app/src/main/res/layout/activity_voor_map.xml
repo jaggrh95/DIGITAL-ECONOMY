@@ -30,7 +30,6 @@
             android:layout_marginTop="32dp"
             android:layout_weight="1"
             android:fontFamily="@font/astana"
-            android:text="Search Nearby"
 
             android:textColor="@color/colorOrange"
             android:textSize="40sp"
