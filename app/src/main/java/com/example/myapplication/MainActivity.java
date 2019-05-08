@@ -6,16 +6,20 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     boolean mBounded;
     BlueServer myServer;
+    Button knopke;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     @Override
@@ -53,4 +57,10 @@ public class MainActivity extends AppCompatActivity {
             mBounded = false;
         }
     };
+
+    public void onclick(View view) {
+        Intent intentje = new Intent(this,ActivityVoorMapV2.class);
+        startActivity(intentje);
+
+    }
 }

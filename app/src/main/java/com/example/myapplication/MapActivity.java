@@ -40,8 +40,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         mapFragment.getMapAsync(this);
         Intent intent = getIntent();
 
-        String holderlong = intent.getStringExtra(ActivityVoorMap.EXTRA_MESSAGE);
-        String holderlat = intent.getStringExtra(ActivityVoorMap.EXTRA_MESSAGE1);
+        String holderlong = intent.getStringExtra(ActivityVoorMapV2.EXTRA_MESSAGE);
+        String holderlat = intent.getStringExtra(ActivityVoorMapV2.EXTRA_MESSAGE1);
         Log.i("inmaps",""+holderlat + " en " + holderlong);
         intent1 = new Intent(this,MainActivity.class);
         Longitude =  Double.parseDouble(holderlong);

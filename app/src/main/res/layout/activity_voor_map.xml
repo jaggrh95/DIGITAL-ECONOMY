@@ -7,7 +7,7 @@
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
     android:layout_gravity="center"
-    tools:context=".ActivityVoorMap">
+    tools:context=".ActivityVoorMapV2">
 
 
     <RelativeLayout
@@ -30,7 +30,7 @@
             android:layout_weight="1"
             android:fontFamily="monospace"
             android:text="Search Nearby"
-            android:textColor="@android:color/background_light"
+            android:textColor="@color/common_google_signin_btn_text_light_pressed"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -75,7 +75,7 @@
             android:layout_weight="1"
             android:fontFamily="monospace"
             android:text="Or give a location"
-            android:textColor="@android:color/background_light"
+            android:textColor="@color/common_google_signin_btn_text_light_pressed"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button" />
@@ -102,7 +102,7 @@
             android:layout_weight="1"
             android:fontFamily="monospace"
             android:text="Welkom"
-            android:textColor="@android:color/background_light"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

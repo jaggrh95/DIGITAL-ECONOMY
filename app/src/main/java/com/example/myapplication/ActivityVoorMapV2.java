@@ -10,21 +10,21 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
-import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
 import java.io.IOException;
 import java.util.List;
 
+public class ActivityVoorMapV2 extends AppCompatActivity {
 
-public class ActivityVoorMap extends AppCompatActivity{
     public static final String EXTRA_MESSAGE =
             "com.example.android.twoactivities.extra.long";
     public static final String EXTRA_MESSAGE1 =
@@ -34,21 +34,16 @@ public class ActivityVoorMap extends AppCompatActivity{
 
     LocationManager locationManager;
     String lattitude,longitude,location;
-    Intent intent;
-    @Override
+    Intent intent; @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_voor_map);
 
         ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
 
-
-
         intent = new Intent(this, MapActivity.class);
 
-
     }
-
 
     public void onClick(View view) {
 
@@ -62,9 +57,9 @@ public class ActivityVoorMap extends AppCompatActivity{
     }
 
     private void getLocation() {
-        if (ActivityCompat.checkSelfPermission(ActivityVoorMap.this, Manifest.permission.ACCESS_FINE_LOCATION)
+        if (ActivityCompat.checkSelfPermission(ActivityVoorMapV2.this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
-                (ActivityVoorMap.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                (ActivityVoorMapV2.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
 
 
@@ -148,7 +143,7 @@ public class ActivityVoorMap extends AppCompatActivity{
         Toast.makeText(this,Locality,Toast.LENGTH_LONG).show();
         String lattitude = String.valueOf(add.getLatitude());
         String longitude = String.valueOf(add.getLongitude());
-
+        Log.d("testjeeeee","test");
         intent.putExtra(EXTRA_MESSAGE,longitude);
         intent.putExtra(EXTRA_MESSAGE1,lattitude);
         startActivity(intent);
