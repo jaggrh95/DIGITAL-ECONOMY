@@ -22,6 +22,7 @@ public class BlueServer extends Service  {
 
     public Activity myAct;
     public LatLng Coordin;
+    public String Name;
 
 
 

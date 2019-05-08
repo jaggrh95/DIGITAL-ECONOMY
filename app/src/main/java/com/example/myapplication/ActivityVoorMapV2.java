@@ -2,14 +2,17 @@ package com.example.myapplication;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.IBinder;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +21,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -34,6 +38,9 @@ public class ActivityVoorMapV2 extends AppCompatActivity {
 
     LocationManager locationManager;
     String lattitude,longitude,location;
+    boolean mBounded;
+    BlueServer myServer;
+    TextView textView;
     Intent intent; @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +49,45 @@ public class ActivityVoorMapV2 extends AppCompatActivity {
         ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
 
         intent = new Intent(this, MapActivity.class);
+        textView=findViewById(R.id.textView);
 
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Intent mIntent = new Intent(this, BlueServer.class);
+        bindService(mIntent, mConnection, BIND_AUTO_CREATE);
+    };
+
+    ServiceConnection mConnection = new ServiceConnection() {
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+            mBounded = false;
+            myServer = null;
+        }
+
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+
+            mBounded = true;
+            BlueServer.LocalBinder mLocalBinder = (BlueServer.LocalBinder)service;
+            myServer = mLocalBinder.getServerInstance();
+            textView.setText("Welkom "+myServer.Name);
+
+
+        }
+    };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mBounded) {
+            unbindService(mConnection);
+            mBounded = false;
+        }
+    };
 
     public void onClick(View view) {
 
