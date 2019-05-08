@@ -71,17 +71,12 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
         LatLng UserPosition = new LatLng(Lattitude, Longitude);
 
-        LatLng StarBux = new LatLng(51.217222,4.421111);
-        LatLng Pizzahut = new LatLng(51.217980,4.417590);
-
-        //mMap.addMarker(new MarkerOptions().position(sydney).title("MyLocation"));
-        mMap.addMarker(new MarkerOptions().position(StarBux).title("Starbucks"));
-        mMap.addMarker(new MarkerOptions().position(Pizzahut).title("Pizzahut"));
+        mMap.addMarker(new MarkerOptions().position(UserPosition).title("MyStreet"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(UserPosition, 15.0f));
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(final Marker marker) {
-                intent1.putExtra(MARKER_MESSAGE,marker.getTitle());
+                intent1.putExtra(MARKER_MESSAGE,marker.getPosition());
                 startActivity(intent1);
                 return false;
             }
