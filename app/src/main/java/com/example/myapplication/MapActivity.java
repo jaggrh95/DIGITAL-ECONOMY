@@ -78,10 +78,12 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         LatLng UserPosition = new LatLng(Lattitude, Longitude);
 
         mMap.addMarker(new MarkerOptions().position(UserPosition).title("MyStreet"));
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(UserPosition, 15.0f));
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(final Marker marker) {
+
                 coordin = marker.getPosition();
                 onStart();
                 startActivity(intent1);

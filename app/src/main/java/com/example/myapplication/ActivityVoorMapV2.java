@@ -192,4 +192,6 @@ public class ActivityVoorMapV2 extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE1,lattitude);
         startActivity(intent);
     }
+
+
 }

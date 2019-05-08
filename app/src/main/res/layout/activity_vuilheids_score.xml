@@ -7,7 +7,7 @@
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
     android:layout_gravity="center"
-    tools:context=".ActivityVoorMapV2">
+    tools:context=".VuilheidsScoreActivity">
 
 
     <RelativeLayout
@@ -25,19 +25,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0.8in"
-                android:layout_marginTop="1.6in"
+                android:layout_marginTop="1.20in"
                 android:text="Geef aan hoe vies het is" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="1.05in"
+                android:layout_marginLeft="1.0in"
 
                 android:text="Vuilheid: 50" />
 
@@ -52,11 +53,12 @@
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0.1in"
-
-                android:text="Verstuur" />
+                android:layout_marginLeft="0.95in"
+                android:text="Verstuur"
+                android:onClick="Verstuur"/>
 
         </LinearLayout>
     </RelativeLayout>

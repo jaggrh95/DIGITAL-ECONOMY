@@ -14,6 +14,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.widget.ImageView;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -23,6 +24,7 @@ public class BlueServer extends Service  {
     public Activity myAct;
     public LatLng Coordin;
     public String Name;
+    public ImageView imageView;
 
 
 
