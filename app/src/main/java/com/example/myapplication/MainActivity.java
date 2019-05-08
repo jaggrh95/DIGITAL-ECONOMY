@@ -1,8 +1,10 @@
 package com.example.myapplication;
 
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.CountDownTimer;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,11 +16,13 @@ public class MainActivity extends AppCompatActivity {
     boolean mBounded;
     BlueServer myServer;
     Button knopke;
+    private CountDownTimer countDownTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        startTimer(this);
 
     }
 
@@ -59,8 +63,22 @@ public class MainActivity extends AppCompatActivity {
     };
 
     public void onclick(View view) {
-        Intent intentje = new Intent(this,ActivityVoorMapV2.class);
-        startActivity(intentje);
 
+
+    }
+
+    public void startTimer(final Context context){
+        countDownTimer = new CountDownTimer(3000,100) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                Intent intentje = new Intent(context,ActivityVoorMapV2.class);
+                startActivity(intentje);
+            }
+        }.start();
     }
 }
