@@ -1,19 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ActivityVoorMap"
+    android:background="@color/colorBlue">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="331dp"
+        android:layout_height="331dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="428dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_blue_circkle" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="331dp"
+        android:layout_height="331dp"
+        android:layout_marginTop="548dp"
+        android:layout_marginEnd="196dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_blue_circkle" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="331dp"
+        android:layout_height="331dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginLeft="236dp"
+        android:layout_marginTop="336dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_blue_circkle" />
+
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView10"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/astana"
+        android:text="WLS"
+        android:textColor="@color/colorOrange"
+        android:textSize="122sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.401"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="336dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/astana"
+        android:text="RAVO"
+        android:textColor="@color/colorOrange"
+        android:textSize="122sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button25"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="17dp"
+        android:onClick="Michiel"
+        android:text="Button"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button26" />
+
 
 </android.support.constraint.ConstraintLayout>
