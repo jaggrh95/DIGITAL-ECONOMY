@@ -49,7 +49,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         String holderlong = intent.getStringExtra(ActivityVoorMapV2.EXTRA_MESSAGE);
         String holderlat = intent.getStringExtra(ActivityVoorMapV2.EXTRA_MESSAGE1);
         Log.i("inmaps",""+holderlat + " en " + holderlong);
-        intent1 = new Intent(this,RatingActivity.class);
+        intent1 = new Intent(this,VuilheidsScoreActivity.class);
         Longitude =  Double.parseDouble(holderlong);
         Lattitude =  Double.parseDouble(holderlat);
 
