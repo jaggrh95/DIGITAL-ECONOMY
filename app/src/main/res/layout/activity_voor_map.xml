@@ -7,7 +7,8 @@
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
     android:layout_gravity="center"
-    tools:context=".ActivityVoorMapV2">
+    tools:context=".ActivityVoorMapV2"
+    android:background="@color/colorBlue">
 
 
     <RelativeLayout
@@ -24,14 +25,15 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/textView"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="224dp"
+            android:layout_marginTop="32dp"
             android:layout_weight="1"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/astana"
             android:text="Search Nearby"
-            android:textColor="@color/common_google_signin_btn_text_light_pressed"
-            android:textSize="24sp"
+
+            android:textColor="@color/colorOrange"
+            android:textSize="40sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -45,8 +47,11 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="97dp"
             android:layout_weight="1"
+
+            android:background="@drawable/ic_orange_button"
             android:onClick="OnClickGeo"
             android:text="Search Location"
+            android:textColor="@color/colorWhite"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -56,12 +61,14 @@
 
 
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/textView3"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="279dp"
+            android:layout_marginTop="21dp"
             android:layout_weight="1"
+            android:background="@drawable/ic_orange_button"
             android:onClick="onClick"
             android:text="Search Nearby"
+            android:textColor="@color/colorWhite"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -73,10 +80,11 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="234dp"
             android:layout_weight="1"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/astana"
             android:text="Or give a location"
-            android:textColor="@color/common_google_signin_btn_text_light_pressed"
-            android:textSize="24sp"
+            android:textColor="@color/colorOrange"
+
+            android:textSize="40sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button" />
 
@@ -86,8 +94,10 @@
             android:layout_height="38dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_username_rect"
+
             android:layout_marginBottom="171dp"
-            android:background="#e2e2e2"
+
             android:inputType="text"
             android:textAlignment="center"
             android:visibility="visible" />
@@ -98,12 +108,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="172dp"
+            android:layout_marginTop="96dp"
             android:layout_weight="1"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/astana"
             android:text="Welkom"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textSize="30sp"
+            android:textColor="@color/colorOrange"
+
+            android:textSize="50sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>

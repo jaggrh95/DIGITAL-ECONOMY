@@ -62,10 +62,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    public void onclick(View view) {
 
-
-    }
 
     public void startTimer(final Context context){
         countDownTimer = new CountDownTimer(3000,100) {
