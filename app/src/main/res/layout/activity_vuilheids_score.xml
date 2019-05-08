@@ -7,7 +7,8 @@
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
     android:layout_gravity="center"
-    tools:context=".VuilheidsScoreActivity">
+    tools:context=".VuilheidsScoreActivity"
+    android:background="@color/colorBlue">
 
 
     <RelativeLayout
@@ -58,7 +59,10 @@
                 android:layout_marginTop="0.1in"
                 android:layout_marginLeft="0.95in"
                 android:text="Verstuur"
-                android:onClick="Verstuur"/>
+                android:onClick="Verstuur"
+                android:background="@drawable/ic_orange_button"
+                android:textColor="@color/colorWhite"
+                />
 
         </LinearLayout>
     </RelativeLayout>
