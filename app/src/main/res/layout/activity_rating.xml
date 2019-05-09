@@ -7,6 +7,26 @@
     tools:context=".RatingActivity"
     android:background="@color/colorBlue">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="331dp"
+        android:layout_height="331dp"
+        android:layout_marginStart="192dp"
+        android:layout_marginLeft="192dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_blue_circkle" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="331dp"
+        android:layout_height="331dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="428dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_blue_circkle" />
+
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
@@ -38,6 +58,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Rating"
+        android:textSize="40dp"
+        android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,6 +79,8 @@
         android:ems="10"
         android:inputType="number"
         android:hint="1 - 10"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
         app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
