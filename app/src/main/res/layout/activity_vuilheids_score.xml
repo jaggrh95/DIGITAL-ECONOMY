@@ -49,6 +49,8 @@
                 android:layout_height="wrap_content"
                 android:max="100"
                 android:layout_marginTop="0.1in"
+                android:background="@color/colorOrange"
+
 
                 android:progress="50" />
 
@@ -56,13 +58,12 @@
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0.1in"
                 android:layout_marginLeft="0.95in"
-                android:text="Verstuur"
-                android:onClick="Verstuur"
+                android:layout_marginTop="0.1in"
                 android:background="@drawable/ic_orange_button"
-                android:textColor="@color/colorWhite"
-                />
+                android:onClick="Verstuur"
+                android:text="Verstuur"
+                android:textColor="@color/colorWhite" />
 
         </LinearLayout>
     </RelativeLayout>
