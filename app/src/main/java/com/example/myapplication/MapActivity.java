@@ -34,6 +34,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     BlueServer myServer;
 
     Intent intent1;
+    Intent intent2;
     private static final int REQUEST_LOCATION = 1;
 
     @Override
@@ -50,6 +51,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         String holderlat = intent.getStringExtra(ActivityVoorMapV2.EXTRA_MESSAGE1);
         Log.i("inmaps",""+holderlat + " en " + holderlong);
         intent1 = new Intent(this,VuilheidsScoreActivity.class);
+        intent2 = new Intent(this,RatingActivity.class);
         Longitude =  Double.parseDouble(holderlong);
         Lattitude =  Double.parseDouble(holderlat);
 
@@ -86,7 +88,13 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
                 coordin = marker.getPosition();
                 onStart();
-                startActivity(intent1);
+                if (myServer.Name.toLowerCase().equals("bestuurder")){
+                    startActivity(intent2);
+                }
+                else {
+                    startActivity(intent1);
+                }
+
                 return false;
             }
         });

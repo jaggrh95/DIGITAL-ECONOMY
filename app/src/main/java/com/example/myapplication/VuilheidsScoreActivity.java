@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class VuilheidsScoreActivity extends AppCompatActivity {
 
@@ -92,8 +93,9 @@ public class VuilheidsScoreActivity extends AppCompatActivity {
     };
 
     public void Verstuur(View view) {
-        Intent intentje = new Intent(this,RatingActivity.class);
+        Intent intentje = new Intent(this,ActivityVoorMapV2.class);
         intentje.putExtra("vuilheid",progress);
+        Toast.makeText(getApplicationContext(), "Submitted!", Toast.LENGTH_SHORT).show();
         startActivity(intentje);
     }
 

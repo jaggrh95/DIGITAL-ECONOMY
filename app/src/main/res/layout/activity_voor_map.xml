@@ -11,15 +11,34 @@
     android:background="@color/colorBlue">
 
 
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="331dp"
+        android:layout_height="331dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_blue_circkle" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="331dp"
+            android:layout_height="331dp"
+            android:layout_marginEnd="184dp"
+            android:layout_marginBottom="428dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_blue_circkle" />
 
         <TextView
             android:id="@+id/textView3"
@@ -93,9 +112,9 @@
             android:layout_height="38dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/ic_username_rect"
-
             android:layout_marginBottom="171dp"
+
+            android:background="@drawable/ic_username_rect"
 
             android:inputType="text"
             android:textAlignment="center"
