@@ -18,6 +18,7 @@ public class RatingActivity extends AppCompatActivity {
 
     LatLng coordin;
     boolean mBounded;
+    Intent intentje;
     BlueServer myServer;
     int Rating;
 
@@ -25,6 +26,7 @@ public class RatingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rating);
+        intentje = new Intent(this,ActivityVoorMapV2.class);
 
         Button btnSubmit = (Button)findViewById(R.id.btnSubmit);
         final TextView txtRating = (TextView)findViewById(R.id.txtRating);
@@ -37,7 +39,10 @@ public class RatingActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Rating has to be between 1 and 10", Toast.LENGTH_SHORT).show();
                 } else {
                     Rating = rating;
+                    Toast.makeText(getApplicationContext(), "Submitted!", Toast.LENGTH_SHORT).show();
+                    startActivity(intentje);
                 }
+
             }
         });
     }
