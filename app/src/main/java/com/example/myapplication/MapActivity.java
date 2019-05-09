@@ -88,7 +88,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
                 coordin = marker.getPosition();
                 onStart();
-                if (myServer.Name.toLowerCase().equals("bestuurder")){
+                if (myServer.Name.toLowerCase().equals("admin")&&myServer.Paswoord.toLowerCase().equals("admin")){
                     startActivity(intent2);
                 }
                 else {

@@ -7,6 +7,7 @@ import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -14,12 +15,16 @@ public class NameScreen extends AppCompatActivity {
     boolean mBounded;
     BlueServer myServer;
     EditText textfield;
+    EditText PaswoordText;
+    Button Admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_name_screen);
-        textfield=findViewById(R.id.editText);
+        textfield=findViewById(R.id.editText2);
+        PaswoordText=findViewById(R.id.editText);
+        Admin=findViewById(R.id.button29);
     }
     @Override
     protected void onStart() {
@@ -60,7 +65,13 @@ public class NameScreen extends AppCompatActivity {
         Intent intentje = new Intent(this,ActivityVoorMapV2.class);
         startActivity(intentje);
         myServer.Name=textfield.getText().toString();
+        myServer.Paswoord=PaswoordText.getText().toString();
 
 
+    }
+
+    public void EnableAdmin(View view) {
+        PaswoordText.setVisibility(View.VISIBLE);
+        Admin.setVisibility(View.INVISIBLE);
     }
 }

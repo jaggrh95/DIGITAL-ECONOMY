@@ -38,50 +38,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_blue_circkle" />
 
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="220dp"
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="359dp"
+        android:layout_height="650dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/astana"
-        android:text="WLS"
-        android:textColor="@color/colorOrange"
-        android:textSize="122sp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.401"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="284dp"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="@font/astana"
-        android:text="RAVO"
-        android:textColor="@color/colorOrange"
-        android:textSize="122sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.519"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button25"
-        android:layout_width="206dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="17dp"
-        android:onClick="Michiel"
-        android:text="Button"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button26" />
 
 
 </android.support.constraint.ConstraintLayout>

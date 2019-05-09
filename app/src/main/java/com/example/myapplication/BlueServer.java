@@ -25,6 +25,7 @@ public class BlueServer extends Service  {
     public LatLng Coordin;
     public int Rating;
     public String Name;
+    public String Paswoord;
     public ImageView imageView;
 
 
